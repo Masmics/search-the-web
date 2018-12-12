@@ -1,8 +1,8 @@
 <template>
     <section class="articles">
         <h2>Articles</h2>
-        <button @click="searchArticles()">Get articles</button>-->
-        <ArticlesSearch :onSearch="handleSearch" :search="search"/>
+        <button @click="searchArticles()">Get articles</button>
+        <ArticleSearch :onSearch="handleSearch" :search="search"/>
         <Loader :loading="loading"/>
 
         <p>
@@ -15,8 +15,7 @@
             {{ error }}
         </pre>
         <div class="search-container">
-          <p v-if="search">Searching for &quot;{{ search }}&quot;</p>-->
-            :article="article"
+          <p v-if="search">Searching for &quot;{{ search }}&quot;</p>
           <ul v-if="articles">
             <Article v-for="(article, i) in articles"
               :key="i"
@@ -49,7 +48,7 @@ export default {
   },
   components: {
     Article,
-    // ArticleSearch,
+    ArticleSearch,
     Loader
   },
   created() {
